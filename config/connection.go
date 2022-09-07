@@ -9,7 +9,7 @@ import (
 )
 
 func Conection() (*gorm.DB, error) {
-	var dsn = "host=localhost user=postgres password=dendi dbname=efish-asg port=5432 sslmode=disable TimeZone=Asia/Shanghai"
+	var dsn = "host=localhost user=postgres password=dendi dbname=day7 port=5432 sslmode=disable TimeZone=Asia/Shanghai"
 	var db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {

@@ -4,7 +4,7 @@ type CreateProduct struct {
 	Name        string
 	Description string
 	Price       float64
-	Id_category int
+	Id_category int `gorm:"foreignKey:id_category"`
 }
 
 type UpdateProduct struct {

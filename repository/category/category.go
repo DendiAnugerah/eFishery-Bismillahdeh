@@ -42,5 +42,5 @@ func (c *categoryRepository) Update(category *category.Category) error {
 }
 
 func (c *categoryRepository) Delete(id int) error {
-	return c.db.Where("id = ?", id).Delete(&category.Category{}).Error
+	return c.db.Where("id_category = ?", id).Delete(&category.Category{}).Error
 }

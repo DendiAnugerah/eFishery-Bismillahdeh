@@ -73,13 +73,13 @@ func (cc *CategoryController) UpdateCategory(c echo.Context) error {
 	if err != nil {
 		return err
 	}
-	return c.JSON(200, M{"message": "Category terupdate"})
+	return c.JSON(200, M{"message": "Category updated"})
 }
 
 func (cc *CategoryController) DeleteCategory(c echo.Context) error {
 	type M map[string]interface{}
 	req := new(categoryservice.DeleteCategory)
-	id := c.Param("id_kategori")
+	id := c.Param("id")
 	var err error
 	req.Id_category, err = strconv.Atoi(id)
 	if err != nil {
@@ -89,5 +89,5 @@ func (cc *CategoryController) DeleteCategory(c echo.Context) error {
 	if err != nil {
 		return err
 	}
-	return c.JSON(200, M{"message": "Category terupdate"})
+	return c.JSON(200, M{"message": "Category deleted"})
 }
