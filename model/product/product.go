@@ -1,12 +1,11 @@
 package product
 
 type Product struct {
-	Id         int    `gorm:"primarykey"`
-	Name       string `json:"name"`
-	Deskripsi  string
-	Harga      int
-	Photo      string
-	IdCategory int
+	Id_product  int     `json:"id_product" gorm:"primary_key"`
+	Name        string  `json:"name"`
+	Price       float64 `json:"price"`
+	Description string  `json:"description"`
+	Id_category int     `json:"id_category"`
 }
 
 func Create(r Repository, p *Product) error {

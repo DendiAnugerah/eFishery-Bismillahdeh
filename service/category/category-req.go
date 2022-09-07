@@ -1,19 +1,19 @@
 package categoryservice
 
 type CreateCategory struct {
-	IdKategori int    `json:"id_kategori"`
-	Name       string `json:"name"`
+	Id_category int
+	Name        string
 }
 
 type UpdateCategory struct {
-	IdKategori int    `json:"id_kategori"`
-	Name       string `json:"name"`
+	Id_category int
+	Name        string
 }
 
 type DeleteCategory struct {
-	IdKategori int `json:"id_kategori"`
+	Id_category int
 }
 
 type FindById struct {
-	IdKategori int `json:"id_kategori"`
+	Id_category int
 }

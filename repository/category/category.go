@@ -29,9 +29,10 @@ func (c *categoryRepository) FindAll() (*[]category.Category, error) {
 
 func (c *categoryRepository) FindById(id int) (*category.Category, error) {
 	C := new(category.Category)
-	err := c.db.Where("id = ?", id).First(c).Error
+	err := c.db.Find(&C, id)
+	//err := c.db.Where("id = ?", id).First(c).Error
 	if err != nil {
-		return nil, err
+		return C, nil
 	}
 	return C, nil
 }

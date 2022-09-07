@@ -43,7 +43,7 @@ func (p *ProductController) GetProduct(c echo.Context) error {
 	id := c.Param("id")
 	var err error
 
-	req.Id, err = strconv.Atoi(id)
+	req.Id_product, err = strconv.Atoi(id)
 	if err != nil {
 		c.JSON(400, http.StatusBadRequest)
 		return err
@@ -94,7 +94,7 @@ func (p *ProductController) DeleteProduct(c echo.Context) error {
 	id := c.Param("id")
 	var err error
 
-	req.Id, err = strconv.Atoi(id)
+	req.Id_product, err = strconv.Atoi(id)
 	if err != nil {
 		c.JSON(400, http.StatusBadRequest)
 		return err

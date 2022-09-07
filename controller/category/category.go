@@ -46,11 +46,11 @@ func (cc *CategoryController) GetAllCategory(c echo.Context) error {
 
 func (cc *CategoryController) GetCategory(c echo.Context) error {
 	req := new(categoryservice.FindById)
-	id := c.Param("id_kategori")
+	id := c.Param("id")
 
 	var err error
 
-	req.IdKategori, err = strconv.Atoi(id)
+	req.Id_category, err = strconv.Atoi(id)
 	if err != nil {
 		log.Printf("err")
 		return err
@@ -81,7 +81,7 @@ func (cc *CategoryController) DeleteCategory(c echo.Context) error {
 	req := new(categoryservice.DeleteCategory)
 	id := c.Param("id_kategori")
 	var err error
-	req.IdKategori, err = strconv.Atoi(id)
+	req.Id_category, err = strconv.Atoi(id)
 	if err != nil {
 		return err
 	}

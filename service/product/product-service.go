@@ -16,7 +16,7 @@ func NewProdService(repositoryR product.Repository, categoryR category.Repositor
 }
 
 func (s *ProductService) Create(cre *CreateProduct) error {
-	cat, err := category.FindById(s.category, cre.IdKategori)
+	cat, err := category.FindById(s.category, cre.Id_category)
 	if err != nil {
 		return err
 	}
@@ -25,23 +25,21 @@ func (s *ProductService) Create(cre *CreateProduct) error {
 	}
 
 	NProduct := &product.Product{
-		Name:       cre.Name,
-		Deskripsi:  cre.Deskripsi,
-		Harga:      cre.Harga,
-		Photo:      cre.Photo,
-		IdCategory: cre.IdKategori,
+		Name:        cre.Name,
+		Description: cre.Description,
+		Price:       cre.Price,
+		Id_category: cre.Id_category,
 	}
 	return product.Create(s.repository, NProduct)
 }
 
 func (s *ProductService) Update(up *UpdateProduct) error {
 	UProduct := &product.Product{
-		Id:         up.Id,
-		Name:       up.Name,
-		Deskripsi:  up.Deskripsi,
-		Harga:      up.Harga,
-		Photo:      up.Photo,
-		IdCategory: up.IdKategori,
+		Id_product:  up.Id_product,
+		Name:        up.Name,
+		Description: up.Description,
+		Price:       up.Price,
+		Id_category: up.Id_category,
 	}
 
 	return product.Update(s.repository, UProduct)
@@ -52,9 +50,9 @@ func (s *ProductService) FindAll() ([]*product.Product, error) {
 }
 
 func (s *ProductService) FindById(f *FindById) (*product.Product, error) {
-	return product.FindById(s.repository, f.Id)
+	return product.FindById(s.repository, f.Id_product)
 }
 
 func (s *ProductService) Delete(de *DeleteProduct) error {
-	return product.Delete(s.repository, de.Id)
+	return product.Delete(s.repository, de.Id_product)
 }

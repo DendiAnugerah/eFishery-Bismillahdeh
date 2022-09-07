@@ -1,8 +1,8 @@
 package category
 
 type Category struct {
-	IdKategori int
-	Name       string
+	Id_category int    `json:"id_category" gorm:"primary_key"`
+	Name        string `json:"name"`
 }
 
 func Create(r Repository, category *Category) error {

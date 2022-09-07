@@ -19,14 +19,14 @@ func (s *CategoryService) Create(cre *CreateCategory) error {
 
 func (s *CategoryService) Update(up *UpdateCategory) error {
 	UCategory := &category.Category{
-		IdKategori: up.IdKategori,
-		Name:       up.Name,
+		Id_category: up.Id_category,
+		Name:        up.Name,
 	}
 	return category.Update(s.repository, UCategory)
 }
 
 func (s *CategoryService) Delete(du *DeleteCategory) error {
-	return category.Delete(s.repository, du.IdKategori)
+	return category.Delete(s.repository, du.Id_category)
 }
 
 func (s *CategoryService) FindAll() (*[]category.Category, error) {
@@ -34,5 +34,5 @@ func (s *CategoryService) FindAll() (*[]category.Category, error) {
 }
 
 func (s *CategoryService) FindById(f *FindById) (*category.Category, error) {
-	return category.FindById(s.repository, f.IdKategori)
+	return category.FindById(s.repository, f.Id_category)
 }
