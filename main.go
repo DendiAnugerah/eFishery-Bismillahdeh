@@ -8,6 +8,8 @@ import (
 	productrepository "Fish/repository/product"
 
 	"github.com/labstack/echo/v4"
+	_ "github.com/swaggo/echo-swagger"
+	echoSwagger "github.com/swaggo/echo-swagger"
 )
 
 // Temen-temen sudah dapat tema ya, temanya e-commerce. Tugasnya bikin REST API yang isinya:
@@ -25,10 +27,28 @@ import (
 // 4. Lama pengerjaan 1 minggu
 // 5. Akan ada sesi speeddating dengan eFisherian dan User
 
+// @title           Swagger Example API
+// @version         1.0
+// @description     This is a sample server celler server.
+// @termsOfService  http://swagger.io/terms/
+
+// @contact.name   API Support
+// @contact.url    http://www.swagger.io/support
+// @contact.email  support@swagger.io
+
+// @license.name  Apache 2.0
+// @license.url   http://www.apache.org/licenses/LICENSE-2.0.html
+
+// @host      localhost:8080
+// @BasePath  /api/v1
+
+// @securityDefinitions.basic  BasicAuth
 func main() {
 	e := echo.New()
 	DB, _ := config.Conection()
 
+	// Swagger
+	e.GET("/swagger/*", echoSwagger.WrapHandler)
 	productR := productrepository.NewProdRepository(DB)
 	CategoryR := categoryrepository.NewCatRepository(DB)
 

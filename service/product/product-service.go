@@ -28,7 +28,7 @@ func (s *ProductService) Create(cre *CreateProduct) error {
 		Name:        cre.Name,
 		Description: cre.Description,
 		Price:       cre.Price,
-		Id_category: make([]category.Category, cre.Id_category),
+		Id_category: cre.Id_category,
 	}
 	return product.Create(s.repository, NProduct)
 }
@@ -39,7 +39,7 @@ func (s *ProductService) Update(up *UpdateProduct) error {
 		Name:        up.Name,
 		Description: up.Description,
 		Price:       up.Price,
-		Id_category: make([]category.Category, 0),
+		Id_category: up.Id_category,
 	}
 
 	return product.Update(s.repository, UProduct)
