@@ -5,7 +5,7 @@ type Product struct {
 	Name        string  `json:"name"`
 	Price       float64 `json:"price"`
 	Description string  `json:"description"`
-	Id_category int     `json:"id_category" gorm:"foreignKey:id_category"`
+	Id_category int     `json:"id_category" gorm:"foreignKey:Id_category"`
 }
 
 func Create(r Repository, p *Product) error {
@@ -41,7 +41,7 @@ func FindAll(r Repository) ([]*Product, error) {
 // }
 
 // type Kategori struct {
-// 	IdKategori   int
+// 	IdKategoricategory
 // 	NamaKategori string
 // }
 
