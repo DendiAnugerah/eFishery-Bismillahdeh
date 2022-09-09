@@ -1,9 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample server celler server.",
-        "title": "Swagger Example API",
-        "termsOfService": "http://swagger.io/terms/",
+        "description": "This is simple API documentation for eFishery e-Commerce project.",
+        "title": "eFishery e-Commerce API",
         "contact": {
             "name": "API Support",
             "url": "http://www.swagger.io/support",
@@ -15,12 +14,6 @@
         },
         "version": "1.0"
     },
-    "host": "localhost:8080",
-    "basePath": "/api/v1",
-    "paths": {},
-    "securityDefinitions": {
-        "BasicAuth": {
-            "type": "basic"
-        }
-    }
+    "host": "localhost:9000",
+    "paths": {}
 }
